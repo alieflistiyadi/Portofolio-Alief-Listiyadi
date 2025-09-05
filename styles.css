@@ -312,6 +312,13 @@ body::after {
     box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
   }
 
+  .button__container {
+  display: flex;
+  flex-direction: column; /* default: vertikal di HP */
+  gap: 12px; /* kasih jarak antar tombol */
+  margin-top: 20px;
+  align-items: center;
+}
   /* ===== SKILLS =====*/
   .skills__container {
     display: flex;
@@ -673,6 +680,11 @@ body::after {
       grid-template-columns: repeat(3, 1fr);
       column-gap: 2rem;
     }
+      .button__container {
+    flex-direction: row; /* tombol sejajar */
+    justify-content: start;
+    gap: 20px; /* jarak antar tombol */
+  }
   }
   @media screen and (min-width: 992px) {
     .bd-grid {
