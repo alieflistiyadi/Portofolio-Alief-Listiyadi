@@ -311,6 +311,13 @@ body::after {
   .button:hover {
     box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
   }
+  .button__container {
+  display: flex;
+  flex-direction: column; /* default: vertikal (mobile) */
+  gap: 16px; /* jarak antar tombol */
+  margin-top: 20px;
+  align-items: center; /* biar tombol tetap center */
+}
 
   /* ===== SKILLS =====*/
   .skills__container {
