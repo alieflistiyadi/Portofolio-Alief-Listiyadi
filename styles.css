@@ -211,30 +211,33 @@ body::after {
   /*===== HOME =====*/
   .home {
     display: flex;
-    flex-direction: column; /* default: mobile stacked */
+    flex-direction: row;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem 5rem 5rem ; /* top right bottom left */
     margin-top: -3rem;
+    gap: 2rem;
   }
 
   .home__data {
-    flex: 1;
-    text-align: center;
-    min-width: unset; /* hapus 720px yang bikin pecah */
+    flex:10;
+    min-width: 720px;
   }
 
   .home__img {
-     flex: 1;
-  display: flex;
-  justify-content: center;
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: right;
+    margin-top: -8rem;
   }
 
   .home__img img {
-    width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
   }
 
   .home__title {
@@ -310,10 +313,10 @@ body::after {
   }
   .button__container {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: column; /* default: vertikal (mobile) */
+  gap: 16px; /* jarak antar tombol */
   margin-top: 20px;
-  align-items: center;
+  align-items: center; /* biar tombol tetap center */
 }
 
   /* ===== SKILLS =====*/
@@ -622,49 +625,75 @@ body::after {
   }
 }
 
-/* === TABLET (768px – 1024px) === */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .home {
-    flex-direction: row; /* teks kiri, foto kanan */
-    justify-content: space-between;
-    padding: 4rem 2rem;
-    gap: 2rem;
+  @media screen and (min-width: 768px) {
+    body {
+      margin: 0;
+    }
+    .section {
+      padding-top: 4rem;
+      padding-bottom: 3rem;
+    }
+    .section-title {
+      margin-bottom: var(--mb-6);
+    }
+    .section-title::after {
+      width: 80px;
+      top: 3rem;
+    }
+    .nav {
+      height: calc(var(--header-height) + 1.5rem);
+    }
+    .nav__list {
+      display: flex;
+      padding-top: 0;
+    }
+    .nav__item {
+      margin-left: var(--mb-6);
+      margin-bottom: 0;
+    }
+    .nav__toggle {
+      display: none;
+    }
+    .nav__link {
+      color: var(--second-color);
+    }
+    .home {
+      padding: 8rem 0 2rem;
+    }
+    .home__img {
+      width: 400px;
+      bottom: 10%;
+    }
+    .about__container {
+      padding-top: 2rem;
+    }
+    .about__img img {
+      width: 300px;
+    }
+    .skills__container {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+      align-items: center;
+      text-align: initial;
+    }
+    .work__container {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
+    }
+    .button {
+    flex-direction: column;
+    gap: 16px;}
+  }
+  @media screen and (min-width: 992px) {
+    .bd-grid {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .home {
+      padding: 10rem 0 2rem;
+    }
+    .home__img {
+      width: 450px;
+    }
   }
 
-  .home__data {
-    text-align: left;
-    max-width: 50%;
-  }
-
-  .home__img img {
-    width: 300px;
-    height: 300px;
-  }
-
-  .button__container {
-    flex-direction: row; /* tombol sejajar */
-    justify-content: flex-start;
-  }
-}
-
-/* === DESKTOP (lebih dari 1024px) === */
-@media screen and (min-width: 1025px) {
-  .home {
-    flex-direction: row;
-    padding: 8rem 5rem 2rem;
-  }
-
-  .home__data {
-    text-align: left;
-  }
-
-  .home__img img {
-    width: 400px;
-    height: 400px;
-  }
-
-  .button__container {
-    flex-direction: row;
-    gap: 24px;
-  }
-}
