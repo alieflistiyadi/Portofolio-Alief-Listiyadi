@@ -673,6 +673,9 @@ body::after {
       grid-template-columns: repeat(3, 1fr);
       column-gap: 2rem;
     }
+    .button {
+    flex-direction: column;
+    gap: 16px;}
   }
   @media screen and (min-width: 992px) {
     .bd-grid {
