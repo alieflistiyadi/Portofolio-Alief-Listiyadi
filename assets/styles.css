@@ -420,7 +420,7 @@ body::after {
   }
   .portfolio-item .hover-items h3 {
     font-size: 1.5rem;
-    color: #dfdfdf;
+    color: #000000;
     margin-bottom: 1.5rem;
   }
   .portfolio-item .hover-items .icons {
